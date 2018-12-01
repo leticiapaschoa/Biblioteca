@@ -1,0 +1,56 @@
+﻿@model Biblioteca.Models.Emprestimo
+
+@{
+    ViewBag.Title = "Detalhes emprestimo";
+}
+
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+<h2>Mais informações do empréstimo</h2>
+
+<div>
+    <h4>Emprestimo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEmprestimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Multa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Multa)
+        </dd>
+
+    </dl>
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Biblioteca.Models.Livro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+<p>
+    @Html.ActionLink("Cadastrar Novo Livro", "NovoLivro")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Editora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Autor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disponibilidade)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Editora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Disponibilidade)
+            </td>
+            <td>
+                @if (item.Disponibilidade)
+                {
+                    @Html.ActionLink("Emprestar", "../Emprestimo/NovoEmprestimo", new { idLivro = item.LivroID })
+                }
+                @Html.ActionLink("Edit", "Edit", new { id = item.LivroID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LivroID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LivroID }) |
+            </td>
+        </tr>
+    }
+
+</table>

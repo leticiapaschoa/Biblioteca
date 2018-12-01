@@ -1,0 +1,62 @@
+﻿@model Biblioteca.Models.Emprestimo
+
+@{
+    ViewBag.Title = "Novo Empréstimo";
+}
+
+
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Emprestimo</h4>
+        <hr />
+        @Html.HiddenFor(model => model.LivroID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Livro.Titulo, htmlAttributes: new { @class = "" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Livro.Titulo, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataEmprestimo, htmlAttributes: new { @class = "" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataEmprestimo, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataProgramadaDevolucao, htmlAttributes: new { @class = "" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataProgramadaDevolucao, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Multa, htmlAttributes: new { @class = "" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Multa, new { htmlAttributes = new { @class = "" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

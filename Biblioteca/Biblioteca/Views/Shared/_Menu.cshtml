@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="~/Script/Menu.js"></script>
+</head>
+<body>
+    <div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
+        <a href="~/Views/Livro/Index.cshtml" class="w3-bar-item w3-button">Livro</a>
+        <a href="#" class="w3-bar-item w3-button">Usuário</a>
+        <a href="~/Views/Emprestimo/Index.cshtml" class="w3-bar-item w3-button">Empréstimo</a>
+        <a href="#" class="w3-bar-item w3-button">Relatório</a>
+    </div>
+    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+    <div>
+        <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+    </div>
+</body>
+</html>
