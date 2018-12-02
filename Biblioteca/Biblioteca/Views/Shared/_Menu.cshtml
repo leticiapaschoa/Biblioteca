@@ -8,10 +8,14 @@
 <body>
     <div class="w3-sidebar w3-bar-block w3-animate-left" style="display:none;z-index:5" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
-        <a href="~/Views/Livro/Index.cshtml" class="w3-bar-item w3-button">Livro</a>
+
+        @Html.ActionLink("Livro", "Index", "Livro", null, new { @class = "w3-bar-item w3-button" })
+        <a href="~/Livro/Index.cshtml" class="w3-bar-item w3-button">Livro</a>
         <a href="#" class="w3-bar-item w3-button">Usuário</a>
-        <a href="~/Views/Emprestimo/Index.cshtml" class="w3-bar-item w3-button">Empréstimo</a>
-        <a href="#" class="w3-bar-item w3-button">Relatório</a>
+        <a href="~/Emprestimo/Index.cshtml" class="w3-bar-item w3-button">Empréstimo</a>
+
+        @Html.ActionLink("Relatório", "RelatorioEmprestimo", "Emprestimo", null, new { @class = "w3-bar-item w3-button" })
+        <a href="#" class="w3-bar-item w3-button">c</a>
     </div>
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
     <div>

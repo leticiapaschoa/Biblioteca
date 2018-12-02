@@ -1,8 +1,63 @@
-﻿
+﻿@model Biblioteca.Models.Emprestimo
+
 @{
-    ViewBag.Title = "ExcluirEmprestimo";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Excluir";
 }
 
-<h2>ExcluirEmprestimo</h2>
 
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+<h2>Delete</h2>
+
+<h3>Você tem certza que deseja excluir este empréstimo?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Livro.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEmprestimo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEmprestimo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDevolucao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Multa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Multa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btItem" />
+        </div>
+    }
+</div>

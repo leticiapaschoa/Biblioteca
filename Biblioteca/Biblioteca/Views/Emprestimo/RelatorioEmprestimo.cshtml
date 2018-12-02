@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Biblioteca.Models.Emprestimo>
+
+@{
+    ViewBag.Title = "RelatorioEmprestimo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RelatorioEmprestimo</h2>
+
+
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+
+<div>
+    <b>Filtro:</b>
+    <select id="busca_id">
+        <option value="Livro">Livro</option>
+        <option value="Usuario">Usuario</option>
+    </select>
+    @Html.TextBox("BuscaValor")<input type="submit" id="busca" value="Busca"/>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Livro.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDevolucao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.NomeUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Multa)
+        </th>
+    </tr>
+    <tbody id="results">
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Livro.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataDevolucao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.NomeUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Multa)
+            </td>
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+<script src="~/Script/jquery-1.10.2.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $("#busca").click(function () {
+            var paramBusca = $("#busca_id").val();
+            var paramValor = $("#BuscaValor").val()            
+
+            $.ajax({
+                type: "post",
+                url: "/Emprestimo/RelatorioEmprestimo?BuscaId=" + paramBusca + "&BuscaValor=" + paramValor,
+                contentType: "html"         
+                });                
+            });
+        });        
+</script>

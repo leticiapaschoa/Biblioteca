@@ -1,8 +1,62 @@
-﻿
+﻿@model Biblioteca.Models.Emprestimo
+
 @{
-    ViewBag.Title = "EditarEmprestimo";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Editar Emprestimo";
 }
 
-<h2>EditarEmprestimo</h2>
 
+@RenderPage("~/Views/Shared/_Menu.cshtml")
+
+<h2>Editar o empréstimo</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.HiddenFor(model => model.EmprestimoID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Livro.Titulo, htmlAttributes: new { @class = "labelClass" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Livro.Titulo, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Usuario, htmlAttributes: new { @class = "labelClass" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Usuario, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataEmprestimo, htmlAttributes: new { @class = "labelClass" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataEmprestimo, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataDevolucao, htmlAttributes: new { @class = "labelClass" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataDevolucao, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Multa, htmlAttributes: new { @class = "labelClass" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Multa, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btItem" />
+            </div>
+        </div>
+    </div>
+}

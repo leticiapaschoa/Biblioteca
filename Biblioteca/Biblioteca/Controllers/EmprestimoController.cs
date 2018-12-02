@@ -120,6 +120,33 @@ namespace Biblioteca.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult RelatorioEmprestimo(string BuscaId, string BuscaValor)
+        {
+            
+            List<Emprestimo> emprestimo = new List<Emprestimo>();
+
+            if (BuscaId == string.Empty)
+            {
+                emprestimo = db.Emprestimo.ToList();
+            }
+            else
+            {
+                if (BuscaId == "Livro")
+                {
+                    emprestimo = db.Emprestimo.Where(l => l.Livro.Titulo.Equals(BuscaValor)).ToList();
+                }
+                else if (BuscaId == "Usuario")
+                {
+                    emprestimo = db.Emprestimo.Where(l => l.Usuario.NomeUsuario.Equals(BuscaValor)).ToList();
+                }
+            }
+
+
+            return View(emprestimo);
+            
+        }      
+       
+
         private decimal CalcularMulta(DateTime dataProgramadaDevolucao)
         {
             decimal multa = 0.00M;
