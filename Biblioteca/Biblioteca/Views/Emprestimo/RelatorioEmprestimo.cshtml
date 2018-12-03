@@ -5,11 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RelatorioEmprestimo</h2>
-
-
 @RenderPage("~/Views/Shared/_Menu.cshtml")
 
+
+<h2>RelatorioEmprestimo</h2>
 
 <div>
     <b>Filtro:</b>
@@ -17,7 +16,7 @@
         <option value="Livro">Livro</option>
         <option value="Usuario">Usuario</option>
     </select>
-    @Html.TextBox("BuscaValor")<input type="submit" id="busca" value="Busca"/>
+    @Html.TextBox("BuscaValor")<input type="submit" id="busca" value="Busca" />
 </div>
 
 <table class="table">
@@ -38,21 +37,21 @@
     <tbody id="results">
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Livro.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataDevolucao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.NomeUsuario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Multa)
-            </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Livro.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataDevolucao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.NomeUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Multa)
+                </td>
 
-        </tr>
+            </tr>
         }
     </tbody>
 
@@ -62,16 +61,15 @@
 
 <script>
     $(document).ready(function () {
-
         $("#busca").click(function () {
             var paramBusca = $("#busca_id").val();
-            var paramValor = $("#BuscaValor").val()            
+            var paramValor = $("#BuscaValor").val()
 
             $.ajax({
                 type: "post",
                 url: "/Emprestimo/RelatorioEmprestimo?BuscaId=" + paramBusca + "&BuscaValor=" + paramValor,
-                contentType: "html"         
-                });                
+                contentType: "html"
             });
-        });        
+        });
+    });
 </script>

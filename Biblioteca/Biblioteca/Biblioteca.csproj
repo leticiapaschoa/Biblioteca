@@ -99,6 +99,8 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Script\jquery-1.10.2.js" />
+    <Content Include="Script\jquery-1.10.2.min.js" />
     <Content Include="Script\Menu.js" />
     <Content Include="Style\Style.css" />
     <Content Include="Web.config" />
@@ -128,6 +130,10 @@
     <Content Include="Views\Emprestimo\DevolverEmprestimo.cshtml" />
     <Content Include="Views\Livro\NovoLivro.cshtml" />
     <Content Include="Views\Emprestimo\RelatorioEmprestimo.cshtml" />
+    <Content Include="Views\Livro\DetalhesLivro.cshtml" />
+    <Content Include="Views\Livro\EditarLivro.cshtml" />
+    <Content Include="Views\Livro\ExcluirLivro.cshtml" />
+    <Content Include="Script\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

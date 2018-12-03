@@ -60,51 +60,6 @@ namespace Biblioteca.Controllers
             return View(emprestimo);
         }
 
-        public ActionResult EditarEmprestimo(int id)
-        {
-            Emprestimo emprestimo = db.Emprestimo.Find(id);
-            if (emprestimo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(emprestimo);
-        }
-
-        [HttpPost]
-        public ActionResult EditarEmprestimo([Bind(Include = "ID,DataEmprestimo,DataDevolucao,Multa")] Emprestimo emprestimo)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(emprestimo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(emprestimo);
-        }
-
-        public ActionResult ExcluirEmprestimo(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Emprestimo emprestimo = db.Emprestimo.Find(id);
-            if (emprestimo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(emprestimo);
-        }
-
-        [HttpPost, ActionName("Excluir")]
-        public ActionResult ExcluirEmprestimo(int id)
-        {
-            Emprestimo emprestimo = db.Emprestimo.Find(id);
-            db.Emprestimo.Remove(emprestimo);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
-
         [HttpPost, ActionName("Devolver")]
         public ActionResult DevolverEmprestimo(int id)
         {
@@ -146,7 +101,6 @@ namespace Biblioteca.Controllers
             
         }      
        
-
         private decimal CalcularMulta(DateTime dataProgramadaDevolucao)
         {
             decimal multa = 0.00M;
