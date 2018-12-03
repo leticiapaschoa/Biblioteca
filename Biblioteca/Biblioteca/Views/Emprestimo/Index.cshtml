@@ -38,16 +38,10 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Usuario)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.EmprestimoID }, new { @class = "btItem" })
-            </td>
+            </td>            
             <td>
                 @Html.ActionLink("Detalhes", "Detalhe", new { id = item.EmprestimoID }, new { @class = "btItem" })
-            </td>
-            <td>
-                @Html.ActionLink("Excluir", "Excluir", new { id = item.EmprestimoID }, new { @class = "btItem" })
-            </td>
+            </td>            
             @if (string.IsNullOrEmpty(item.DataDevolucao.ToString()))
             {
                 <td>

@@ -94,6 +94,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Script\Menu.js" />
     <Content Include="Style\Style.css" />
@@ -121,10 +125,9 @@
     <Content Include="Views\Emprestimo\Index.cshtml" />
     <Content Include="Views\Emprestimo\DadosEmprestimo.cshtml" />
     <Content Include="Views\Emprestimo\NovoEmprestimo.cshtml" />
-    <Content Include="Views\Emprestimo\EditarEmprestimo.cshtml" />
-    <Content Include="Views\Emprestimo\ExcluirEmprestimo.cshtml" />
     <Content Include="Views\Emprestimo\DevolverEmprestimo.cshtml" />
     <Content Include="Views\Livro\NovoLivro.cshtml" />
+    <Content Include="Views\Emprestimo\RelatorioEmprestimo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,9 +135,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
