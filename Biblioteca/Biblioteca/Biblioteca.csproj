@@ -99,6 +99,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Img\biblioteca-logo.png" />
     <Content Include="Script\jquery-1.10.2.js" />
     <Content Include="Script\jquery-1.10.2.min.js" />
     <Content Include="Script\Menu.js" />

@@ -2,12 +2,13 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @RenderPage("~/Views/Shared/_Menu.cshtml")
 
 <p>
-    @Html.ActionLink("Cadastrar Novo Livro", "NovoLivro")
+    @Html.ActionLink("Cadastrar Novo Livro", "NovoLivro", null, null, new { @class = "button" })
 </p>
 <table class="table">
     <tr>
@@ -46,9 +47,9 @@
                 {
                     @Html.ActionLink("Emprestar", "../Emprestimo/NovoEmprestimo", new { idLivro = item.LivroID })
                 }
-                @Html.ActionLink("Edit", "Edit", new { id = item.LivroID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.LivroID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.LivroID }) |
+                @Html.ActionLink("Editar", "Edit", new { id = item.LivroID }) 
+                @Html.ActionLink("Informações", "Details", new { id = item.LivroID }) 
+                @Html.ActionLink("Excluir", "Delete", new { id = item.LivroID }) 
             </td>
         </tr>
     }

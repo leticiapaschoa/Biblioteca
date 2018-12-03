@@ -10,16 +10,16 @@
         <button class="w3-bar-item w3-button w3-large" onclick="w3_close()">Fechar &times;</button>
 
         @Html.ActionLink("Livro", "Index", "Livro", null, new { @class = "w3-bar-item w3-button" })
-        <a href="~/Livro/Index.cshtml" class="w3-bar-item w3-button">Livro</a>
-        <a href="#" class="w3-bar-item w3-button">Usuário</a>
-        <a href="~/Emprestimo/Index.cshtml" class="w3-bar-item w3-button">Empréstimo</a>
-
+        @Html.ActionLink("Usuário", "Index", "Usuario", null, new { @class = "w3-bar-item w3-button" })
+        @Html.ActionLink("Empréstimo", "Index", "Emprestimo", null, new { @class = "w3-bar-item w3-button" })
         @Html.ActionLink("Relatório", "RelatorioEmprestimo", "Emprestimo", null, new { @class = "w3-bar-item w3-button" })
-        <a href="#" class="w3-bar-item w3-button">c</a>
+        @Html.ActionLink("Sair", "Sair", "Usuario", null, new { @class = "w3-bar-item w3-button" })
+
     </div>
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
     <div>
         <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
+        <img src="~/Img/biblioteca-logo.png"/>
     </div>
 </body>
 </html>
