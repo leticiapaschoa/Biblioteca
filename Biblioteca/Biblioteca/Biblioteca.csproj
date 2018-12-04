@@ -94,9 +94,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database.mdf" />
-    <Content Include="App_Data\Database_log.ldf">
-      <DependentUpon>Database.mdf</DependentUpon>
+    <Content Include="App_Data\BancoDados.mdf" />
+    <Content Include="App_Data\BancoDados_log.ldf">
+      <DependentUpon>BancoDados.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Img\biblioteca-logo.png" />
@@ -110,6 +110,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmprestimoController.cs" />
     <Compile Include="Controllers\LivroController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -135,6 +136,7 @@
     <Content Include="Views\Livro\EditarLivro.cshtml" />
     <Content Include="Views\Livro\ExcluirLivro.cshtml" />
     <Content Include="Script\jquery-1.10.2.min.map" />
+    <Content Include="Views\Usuario\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
